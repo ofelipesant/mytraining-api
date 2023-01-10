@@ -5,9 +5,9 @@ export async function listTrainingById(req: Request, res: Response){
     try {
         const { id } = req.params
         const training = await Training.findById(id)
-        res.status(200).json(training)
+        return res.status(200).json(training)
     } catch (error) {
         console.error(error)
-        res.status(500).json(error)
+        return res.status(500).json(error)
     }
 }

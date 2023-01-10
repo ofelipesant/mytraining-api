@@ -9,7 +9,6 @@ export const Training = model('Training', new Schema({
         {
             name:{
                 type: String,
-                required: true,
             },
             weight:{
                 type: String
