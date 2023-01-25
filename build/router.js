@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const listTraining_1 = require("./useCases/Training/listTraining");
+const listTrainingById_1 = require("./useCases/Training/listTrainingById");
+const createTraining_1 = require("./useCases/Training/createTraining");
+const deleteTraining_1 = require("./useCases/Training/deleteTraining");
+const updateTraining_1 = require("./useCases/Training/updateTraining");
+exports.router = (0, express_1.Router)();
+exports.router.get('/trainings', listTraining_1.listTraining);
+exports.router.get('/trainings/:id', listTrainingById_1.listTrainingById);
+exports.router.post('/trainings', createTraining_1.createTraining);
+exports.router.delete('/trainings/:id', deleteTraining_1.deleteTraining);
+exports.router.put('/trainings/:id', updateTraining_1.updateTraining);
